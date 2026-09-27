@@ -8,17 +8,16 @@ abstract: >-
   turns a frozen method into runnable, verified research code.
 type: software
 authors:
-  # The published contact address is set. TODO(maintainer): add `given-names` +
-  # `family-names` (and optionally `orcid`) if the citation should carry the legal
-  # name; the alias alone is valid CFF and is what a handle-based citation uses.
-  - alias: "tylsssss"
+  - given-names: "Sa"
+    family-names: "Zhang"
+    alias: "tylsssss"
     email: "sazhang@bjtu.edu.cn"
 license: Apache-2.0
 license-url: "https://www.apache.org/licenses/LICENSE-2.0"
 version: 0.1.0
-# date-released: TODO(maintainer): set at the first tagged release, e.g. 2026-XX-XX
-repository-code: "https://github.com/tylsssss/Time-series-research-skills"  # TODO(maintainer): verify the owner path
-url: "https://github.com/tylsssss/Time-series-research-skills"  # TODO(maintainer): verify the owner path
+# date-released: TODO(maintainer): set when v0.1.0 is tagged
+repository-code: "https://github.com/tylsssss/Time-series-research-skills"
+url: "https://github.com/tylsssss/Time-series-research-skills"
 keywords:
   - time-series
   - research-agents

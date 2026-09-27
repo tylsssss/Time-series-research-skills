@@ -88,17 +88,21 @@ If you are publishing a fork, treat this section as a hard gate rather than hist
 
 ## 4. Repository identity and metadata
 
-- [ ] **Verify the owner path.** The handle is declared once, in
-      `.claude-plugin/marketplace.json` (`owner.name`), and referenced in 19 places across
-      8 files: `CITATION.cff`, both READMEs, `.github/ISSUE_TEMPLATE/config.yml`,
-      `.github/ISSUE_TEMPLATE/pattern_card.md`, `CODE_OF_CONDUCT.md`, and this checklist.
-      Do not hand-edit them — a partial rename leaves 404 links and a wrong attribution:
+- [x] **Owner path and repository name — verified against the live remote.** The
+      repository exists at `https://github.com/tylsssss/Time-series-research-skills`, and
+      both names are declared once, in `.claude-plugin/marketplace.json` (`owner.name` and
+      `name`). They appear in ~20 places across 10 files, including extensionless files
+      (`LICENSE`, `NOTICE`, `Makefile`). Never hand-edit them — a partial rename leaves 404
+      links and a wrong attribution:
       ```bash
-      scripts/set-owner.sh --show                  # current handle and every occurrence
-      scripts/set-owner.sh <your-github-handle>     # atomic rename, then re-runs lint
+      scripts/set-owner.sh --show                  # owner handle and every occurrence
+      scripts/set-owner.sh --slug --show            # repository name and every occurrence
+      scripts/set-owner.sh --slug <new-repo-name>   # atomic rename, then re-runs lint
       ```
-      `scripts/lint.mjs` L15 fails whenever a self-reference or an identity mention
-      disagrees with the declared owner, so the rename cannot land half-done.
+      `scripts/lint.mjs` L15 checks the owner, and **L18 compares the repository name in
+      self-references against the git remote**, so this class of drift is caught by
+      `make lint` rather than by a reader clicking a dead link. L18 warns rather than
+      fails, because a fork legitimately keeps pointing at upstream.
 - [x] **Commit identity — decided.** The published identity is
       **`sazhang@bjtu.edu.cn`**, and it is already wired into `CITATION.cff` (author
       email), `.claude-plugin/marketplace.json` (owner email), `CODE_OF_CONDUCT.md` and
