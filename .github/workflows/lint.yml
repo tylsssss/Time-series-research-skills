@@ -1,5 +1,10 @@
 name: lint
 
+# The steps here are not restated inline: the job calls `make ci`, and `make ci` is
+# runnable locally before pushing. A workflow that duplicates its checks drifts
+# from them — this repository already shipped one stale probe-profile name in a
+# step that only CI ever executed.
+
 on:
   push:
     branches: [main]
@@ -10,8 +15,8 @@ permissions:
   contents: read
 
 jobs:
-  repository-lint:
-    name: repository lint
+  ci:
+    name: make ci
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -22,19 +27,11 @@ jobs:
         with:
           python-version: '3.11'
 
-      # The linter is the enforcement arm of CONTRIBUTING.md: frontmatter,
-      # reference-path integrity, profile sync, fixture presence, asset paths.
-      - name: Lint repository
-        run: node scripts/lint.mjs
+      # lint -> self-test -> bundle -> installer (throwaway HOME) -> profile swap
+      # round-trip -> identity rename no-op
+      - name: make ci
+        run: make ci
 
-      # Proves the structural grader can both pass a conforming dossier and
-      # catch a broken one. Runs offline; no API key, no network.
-      - name: Structural grader self-test
-        run: python3 evals/run.py --self-test
-
-      # Artifact path: a reviewer can download the flattened bundle.
-      - name: Build bundles
-        run: node scripts/build-bundle.mjs
       - uses: actions/upload-artifact@v4
         with:
           name: bundles
@@ -42,38 +39,3 @@ jobs:
             dist/*.bundle.md
             dist/manifest.json
           if-no-files-found: error
-
-  shellcheck:
-    name: shell scripts
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: Syntax-check installers
-        run: |
-          bash -n scripts/install.sh
-          bash -n scripts/use-profile.sh
-          bash -n scripts/set-owner.sh
-      - name: Owner rename is a no-op on the current handle
-        run: |
-          scripts/set-owner.sh --show
-          # Renaming to the declared handle must change nothing and exit 0.
-          handle="$(python3 -c 'import json;print(json.load(open(".claude-plugin/marketplace.json"))["owner"]["name"])')"
-          scripts/set-owner.sh "$handle"
-          git diff --exit-code
-      - name: Dry-run the installer against a fake HOME
-        run: |
-          export HOME="$(mktemp -d)"
-          bash scripts/install.sh --target all --scope user --dry-run
-          bash scripts/install.sh --target all --scope user
-          test -f "$HOME/.claude/skills/time-series-model-ideation/SKILL.md"
-          test -f "$HOME/.agents/skills/time-series-code-implementation/SKILL.md"
-          # Re-installing must back up, never delete.
-          bash scripts/install.sh --target agents --scope user --quiet
-          ls "$HOME/.agents/skills" | grep -q 'time-series-model-ideation.bak-'
-      - name: Profile swap round-trip
-        run: |
-          bash scripts/use-profile.sh --check
-          bash scripts/use-profile.sh minimal
-          bash scripts/use-profile.sh --check && exit 1 || true
-          bash scripts/use-profile.sh default
-          bash scripts/use-profile.sh --check

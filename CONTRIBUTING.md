@@ -45,13 +45,21 @@ Requirements: `python3` (3.9+) and `node` (18+). No package installation is need
 the runner and the linters use only the standard library.
 
 ```bash
-make lint          # frontmatter, reference paths, profile sync, fixtures, assets
+make ci            # everything CI runs: lint, self-test, bundle, installer, profile swap
+make lint          # frontmatter, reference paths, profile sync, fixtures, assets, identity
 make self-test     # structural grader proves it can pass a good dossier and fail a bad one
 make bundle        # build dist/*.bundle.md
 make install-user  # install both skills for the current user (Claude Code + ~/.agents/skills)
 ```
 
-Before opening a pull request, run `make lint && make self-test`. Both also run in CI.
+**Run `make ci` before pushing.** It is the same set of steps the `lint` workflow runs —
+the workflow calls these targets rather than restating them, because a workflow that
+duplicates its checks drifts from them. This repository shipped a CI step naming a probe
+profile that had been deleted, and only CI noticed, after the push. Running it locally
+would have caught it.
+
+`make ci` requires the shipped default profile; if you have applied your own, run
+`scripts/use-profile.sh default` first.
 
 ## Documentation discipline
 

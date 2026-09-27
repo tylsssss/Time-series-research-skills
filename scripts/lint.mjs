@@ -538,6 +538,38 @@ function remoteSlug() {
 }
 
 // ---------------------------------------------------------------------------
+// L19 — workflows only reference scripts and make targets that exist
+//
+// A workflow step is configuration that nothing else type-checks. This repository
+// shipped a CI step naming a profile directory that had been deleted, and only CI
+// noticed, after the push. Cheaper to catch here.
+// ---------------------------------------------------------------------------
+{
+  const makefilePath = path.join(ROOT, 'Makefile');
+  const targets = new Set(
+    exists(makefilePath)
+      ? [...readText(makefilePath).matchAll(/^([A-Za-z][\w-]*):/gm)].map((m) => m[1])
+      : [],
+  );
+  const problems = new Set();
+  let refsChecked = 0;
+  for (const wf of walk(path.join(ROOT, '.github/workflows')).filter((f) => /\.ya?ml$/.test(f))) {
+    const text = readText(wf);
+    for (const m of text.matchAll(/\b(scripts|evals)\/[A-Za-z0-9._/-]+/g)) {
+      refsChecked += 1;
+      if (!exists(path.join(ROOT, m[0]))) problems.add(`${rel(wf)}: ${m[0]} does not exist`);
+    }
+    for (const m of text.matchAll(/(?:^|\s)make\s+([A-Za-z][\w-]*)/gm)) {
+      refsChecked += 1;
+      if (!targets.has(m[1])) problems.add(`${rel(wf)}: make ${m[1]} is not a Makefile target`);
+    }
+  }
+  const list = [...problems];
+  check('L19 workflow-references', list.length === 0,
+    list.length ? list.join('; ') : `${refsChecked} workflow reference(s) resolve to real scripts and targets`);
+}
+
+// ---------------------------------------------------------------------------
 // Report
 // ---------------------------------------------------------------------------
 const errors = findings.filter((f) => f.severity === 'error' && !f.ok);

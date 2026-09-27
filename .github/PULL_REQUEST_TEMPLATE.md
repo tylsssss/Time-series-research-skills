@@ -17,7 +17,7 @@ split or explained.
 
 ## Contract checks
 
-- [ ] I ran `make lint` and `make self-test` locally, and both pass.
+- [ ] I ran `make ci` locally and it passes (`make lint` and `make self-test` are part of it).
 - [ ] If I changed a skill's behavior, I added or updated at least one expectation in
       `skills/time-series-model-ideation/evals/evals.json`.
 - [ ] If I changed the dossier schema (section count or order, ID namespace, enum value,
