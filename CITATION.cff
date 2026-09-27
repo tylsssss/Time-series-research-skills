@@ -1,0 +1,30 @@
+cff-version: 1.2.0
+message: "If you use this project in academic work, please cite it using the metadata below."
+title: "Time-series-research-skills"
+abstract: >-
+  Agent Skills for time-series research: a stage-gated ideation compiler that turns a
+  research urge into one traceable Idea Dossier with typed claims, evidence levels, and
+  an explicit GO / PIVOT / NEED-EVIDENCE / KILL decision, plus a downstream skill that
+  turns a frozen method into runnable, verified research code.
+type: software
+authors:
+  # The published contact address is set. TODO(maintainer): add `given-names` +
+  # `family-names` (and optionally `orcid`) if the citation should carry the legal
+  # name; the alias alone is valid CFF and is what a handle-based citation uses.
+  - alias: "tylsssss"
+    email: "sazhang@bjtu.edu.cn"
+license: Apache-2.0
+license-url: "https://www.apache.org/licenses/LICENSE-2.0"
+version: 0.1.0
+# date-released: TODO(maintainer): set at the first tagged release, e.g. 2026-XX-XX
+repository-code: "https://github.com/tylsssss/Time-series-research-skills"  # TODO(maintainer): verify the owner path
+url: "https://github.com/tylsssss/Time-series-research-skills"  # TODO(maintainer): verify the owner path
+keywords:
+  - time-series
+  - research-agents
+  - agent-skills
+  - llm-agents
+  - research-methodology
+  - reproducibility
+  - forecasting
+  - representation-learning

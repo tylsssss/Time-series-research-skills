@@ -1,0 +1,75 @@
+name: evals
+
+# Tier 2 sends a case prompt to a model and judges the eight expectations with a
+# second model call. It needs a key and it costs money, so it never runs on a
+# plain pull request. Tier 1 (structural, offline) runs in lint.yml on every push.
+
+on:
+  workflow_dispatch:
+    inputs:
+      case:
+        description: 'Eval case id to run (blank = all 12)'
+        required: false
+        default: ''
+      provider:
+        description: 'Provider'
+        required: true
+        default: anthropic
+        type: choice
+        options: [anthropic, openai, deepseek]
+      model:
+        description: 'Model name (blank = provider default)'
+        required: false
+        default: ''
+  schedule:
+    # Weekly drift check, Monday 03:00 UTC. Skips itself when no key is configured.
+    - cron: '0 3 * * 1'
+
+permissions:
+  contents: read
+
+jobs:
+  tier2:
+    name: tier 2 behavioral eval
+    runs-on: ubuntu-latest
+    # Secrets are not exposed to scheduled runs from forks; skip cleanly instead.
+    if: github.event_name == 'workflow_dispatch' || github.repository == github.repository
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Check for a provider key
+        id: key
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+        run: |
+          if [ -n "$ANTHROPIC_API_KEY$OPENAI_API_KEY$DEEPSEEK_API_KEY" ]; then
+            echo "available=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "available=false" >> "$GITHUB_OUTPUT"
+            echo "No provider key configured; Tier 2 skipped. Add one repository secret to enable it."
+          fi
+
+      - name: Run Tier 2
+        if: steps.key.outputs.available == 'true'
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+        run: |
+          args=(--tier2 --provider "${{ github.event.inputs.provider || 'anthropic' }}")
+          [ -n "${{ github.event.inputs.model }}" ] && args+=(--model "${{ github.event.inputs.model }}")
+          [ -n "${{ github.event.inputs.case }}" ] && args+=(--case "${{ github.event.inputs.case }}")
+          python3 evals/run.py "${args[@]}"
+
+      - name: Upload results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: eval-results
+          path: evals/results/
+          if-no-files-found: warn

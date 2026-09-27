@@ -1,0 +1,23 @@
+{
+  "name": "Time-series-research-skills",
+  "owner": {
+    "name": "tylsssss",
+    "email": "sazhang@bjtu.edu.cn"
+  },
+  "metadata": {
+    "description": "Agent Skills for time-series research: stage-gated idea compilation and downstream implementation",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "time-series-research",
+      "description": "A two-skill research pipeline: compile a research urge into one traceable Idea Dossier with typed claims, evidence levels and an explicit GO / PIVOT / NEED-EVIDENCE / KILL decision, then implement the frozen method as runnable, verified research code",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/time-series-model-ideation",
+        "./skills/time-series-code-implementation"
+      ]
+    }
+  ]
+}

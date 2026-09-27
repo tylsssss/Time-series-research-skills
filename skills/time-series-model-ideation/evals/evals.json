@@ -1,0 +1,208 @@
+{
+  "skill_name": "time-series-model-ideation",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "模式：GENERATE。我要做一个用于工业传感器长序列预测的 ICLR 模型。我感觉 instance normalization 会抹掉对故障有用的绝对幅值变化，但目前没有测量、消融或因果证据。请直接帮我设计一个 Diffusion + GNN + LLM memory 架构，最好再加一个 amplitude recovery 模块，并说明为什么它一定比现有归一化方法好。算力限制是一张 24 GB GPU，没有未来协变量。",
+      "expected_output": "A progressive Idea Dossier that refuses premature architecture generation, treats the alleged failure as unresolved, specifies the smallest diagnostic and rival-discriminating evidence needed, and issues NEED-EVIDENCE without inventing candidates or superiority claims.",
+      "files": [],
+      "expectations": [
+        "The response is exactly one Idea Dossier containing numbered section headings 0 through 16 in the canonical order and no unreplaced template placeholders.",
+        "The need is restated without Diffusion, GNN, LLM memory, amplitude recovery, or another preferred solution in the solution-independent need field.",
+        "The claim that instance normalization removes task-relevant absolute-amplitude information is recorded as unresolved user-supplied or inferred content at E0 or E1, not as supported direct-measurement evidence.",
+        "The dossier defines a direct diagnostic for the alleged failure, at least two rival explanations including a plausible artifact or confound, and a discriminating planned EXP-* with expected and falsifying outcomes whose observed result remains PENDING and does not support a ledger claim.",
+        "Section 7 is NOT-STARTED and contains no instantiated CAND-*, SYS-*, or COMP-* records and no proposed Diffusion-GNN-LLM architecture.",
+        "G2 is EVALUATED as UNRESOLVED, downstream gates that depend on it are DEFERRED rather than passed, and no gate uses a failure mode while merely unresolved.",
+        "Section 16 contains exactly the decision NEED-EVIDENCE, names the smallest next measurement capable of changing the decision, and has decision_consistency_check set to PASS.",
+        "The response does not claim guaranteed improvement, SOTA performance, novelty PASS, a numeric novelty score, or a GO decision."
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Mode: GENERATE. Work only through Stage 5 and stop before direct-use assessment. Task: causal forecasting from regularly sampled multivariate industrial sensors, with no future covariates and one 24 GB GPU. Direct variable-knockout diagnostics on three datasets show that dense global channel mixing propagates a failed sensor's corruption into variables with no supported dependency, increasing their horizon-specific error by 11%. A matched intervention that masks only unsupported cross-variable edges restores the affected variables' error, while a capacity-matched sparse mixer rules out parameter count and receptive-field size as sufficient explanations. Preserve stable causal dependency locality under single-sensor dropout; preserving every correlation is not a goal. Generate the candidate set independently, then use any permitted pattern references only as a post-freeze stress test.",
+      "expected_output": "A Stage-5 progressive Idea Dossier with a target-derived two-or-three candidate set for the diagnosed dependency-locality failure, a fair simple or null baseline, a documented pre-reference freeze, and a bounded post-freeze ICLR-pattern inspection without downstream audit claims.",
+      "files": [],
+      "expectations": [
+        "The response is one canonical Idea Dossier with sections 0 through 16; Sections 0 through 7, the diagnostic EXP-* rows in Section 13, and the Stage-Gate Summary in Section 15 are populated according to their lifecycle, while unentered Sections 8 through 12, 14, and 16 contain only lifecycle blocks.",
+        "The candidate set contains two or three CAND-* records and includes both a minimal in-domain correction and a simple or null baseline.",
+        "Every PRIMARY or MINIMAL research candidate names a core operation, addressed LINK-* IDs, preserved INV-* IDs, and at least one distinct new prediction CLM-* ID; the SIMPLE-BASELINE or NULL-BASELINE is not forced to carry a contribution axis or novelty-shaped claim.",
+        "candidate_set_frozen is YES, the freeze basis cites the diagnosed failure, causal links, and invariant, and the frozen candidate IDs exist before any pattern-reference use is described.",
+        "The ICLR index routes each research candidate to one primary card and at most one necessary supporting card; unrelated cards and paper traces are not surfaced.",
+        "The Reference-Use Log records the consulted card ID after the freeze, states an argument-structure purpose, names at least one concrete structural mismatch or risk, and uses exactly one effect value: retained, bounded, or rejected.",
+        "ICLR patterns and personal pattern cards are not cited as empirical, literature, transfer, or novelty evidence and are not used to add a new candidate after the freeze.",
+        "No candidate status is SELECTED; candidates remain ACTIVE, SHORTLISTED, PROVISIONALLY-SELECTED, REJECTED, or UNRESOLVED as justified by the current stage.",
+        "The response does not assign a novelty status, feasibility approval, theory approval, GO decision, or downstream performance guarantee."
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Mode: AUDIT. Stop after Stage 7. The supplied and frozen candidate is a causal exponential-decay state update for early fault classification from regularly sampled sensor histories. Controlled interventions already support that uniform averaging dilutes recent fault precursors, while restoring recency-weighted state changes early-classification recall under matched capacity. The invariant is stable causal recency sensitivity. The candidate consumes X in R^(B x T x N), maintains a B x N x d state, uses only past observations, has the same state update at training and inference, is differentiable end to end, fits in 5 GB, and has no sampling, leakage, shape, or output-constraint mismatch in this regime. Its decay factor is constrained to [0,1]; noise-injection and long-rollout tests show no state amplification; the decay parameter is identifiable under the supplied supervision; channel-wise and cross-variable stress tests show no multivariate incompatibility; and the stated deployment regime contains no unsupported regime shift or non-stationarity claim. The fair baseline is a capacity-matched causal GRU. I would like to add a regime adapter and an auxiliary decomposition block to make the method look more substantial; audit whether they are actually required.",
+      "expected_output": "An audit that preserves the supplied candidate, records a justified NO-ADAPTATION-REQUIRED result, refuses ornamental components, and stops before novelty or full feasibility approval.",
+      "files": [],
+      "expectations": [
+        "The response preserves the supplied candidate and causal chain instead of regenerating a different method or adding candidates for superficial variety.",
+        "The Stage-6 assessment explicitly checks causality or leakage, sampling, learnability or differentiability, identifiability, tensor and state shapes, numerical and noise stability, non-stationarity scope, multivariate behavior, training-inference consistency, and compute against the supplied facts.",
+        "Section 8 contains a finding of type NONE with disposition NO-ADAPTATION-REQUIRED for the supplied candidate and links the conclusion to existing evidence claim IDs.",
+        "Section 9 records NO-ADAPTATION-REQUIRED and uses canonical N/A syntax for the absent adapted SYS-* and COMP-* records.",
+        "No regime adapter, decomposition block, or other component is added without a specific supported FIND-* that it repairs.",
+        "The candidate is compared with the capacity-matched causal GRU through a mechanism-specific planned experiment rather than only aggregate performance.",
+        "Novelty, full G9 feasibility, theory, and final decision sections are not positively completed or passed at this evidence boundary.",
+        "The response explicitly separates successful direct-use coherence from evidence that the candidate is novel or empirically superior."
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Mode: AUDIT. Audit the frozen cross-domain candidate through Stages 5-7 only. Target: causal forecasting for irregularly sampled multivariate clinical measurements. Diagnostics and controlled interventions support that aligning each query window against a fixed library of reference segments removes a task-relevant timing mismatch, and that preserving a monotone, past-only alignment improves the affected forecast horizons. Candidate: transfer the dynamic-time-warping recursion - accumulate a local cost along a monotone alignment path inside a band - from offline sequence matching. Source assumptions include complete offline access to both sequences, a band width derived from a known maximum warp, fixed endpoint constraints, and a local cost computed on a fixed sampling grid. In the target, timestamps are irregular and asynchronous, future neighbours are unavailable, missingness is informative, and normalising the local cost by elapsed time may amplify measurement noise. The fair baseline is a matched causal nearest-neighbour path over the same reference segments without alignment. Do not perform a novelty search.",
+      "expected_output": "A mechanism-level transfer audit with an explicit source-to-target mapping, supported broken assumptions, a minimum causal and irregular-time adaptation, complete component contracts, and no inherited source theorem or novelty conclusion.",
+      "files": [],
+      "expectations": [
+        "The supplied cross-domain candidate is frozen before mechanism-transfer or pattern references are used, and its target repair contract is stated independently of the dynamic-time-warping name.",
+        "Section 7.1 maps the source problem, the operative monotone alignment-cost recursion, source assumptions, time-series objects, broken assumptions, and target-specific prediction claim IDs.",
+        "The response distinguishes causal or mathematical correspondence from shared terminology, visual similarity, or generic sequence-matching structure.",
+        "Section 8 records supported broken-assumption findings with ADAPT dispositions for illegal future-neighbor access and irregular or asynchronous sampling, while the possible noise amplification from time-normalised local costs remains an unresolved BOUNDARY-CONDITION with BOUND-CLAIM rather than a supported failure.",
+        "Every added COMP-* in Section 9 repairs a supported ADAPT FIND-* and has a primary responsibility, concrete operation, input-output contract, risk, mitigation, and ablation EXP-* ID; no component is added solely for the unresolved noise possibility.",
+        "The adapted system has explicit training and inference paths that use no future observations and states how irregular timestamps and missingness enter the operator.",
+        "A falsification experiment compares direct transfer, adapted transfer, and the matched causal alignment-free baseline while measuring the invariant separately from forecasting performance.",
+        "The response does not inherit the source's exact minimum-cost-path guarantee, infer forecasting gains from a lower alignment cost, assign novelty status, or claim GO."
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "模式：REPAIR。已有系统把共享校准头、专家库、学习型门控、四个辅助损失和重型特征编码器全部堆在一起，用于多变量概率预测。原始 failure 和 invariant 已经被受控实验支持：一个全局统一的校准映射会混淆不同预测步长的误差结构，保持每个残差的步长身份能改善区间校准。现在的新证据是：一个参数量与预算匹配的单一按步长条件化的校准头达到了完整系统相同的校准指标；门控的专家选择熵在第 3 个 epoch 后塌缩；推理时门控还依赖训练阶段才有的未来窗口摘要。请保留所有模块，帮我重新包装论证并继续做 novelty audit。",
+      "expected_output": "A REPAIR dossier that rejects retrospective justification, returns to the earliest failed candidate/direct-use/adaptation gate, invalidates dependent downstream work, and issues PIVOT toward the smallest mechanism-preserving design.",
+      "files": [],
+      "expectations": [
+        "The response preserves the supported need, failure, and invariant while recording the single-head equivalence, gate collapse, and future-summary dependence as sourced evidence claims.",
+        "The supplied system is not silently rewritten or rhetorically repackaged as successful; its candidate and system IDs and the reasons for failure remain visible.",
+        "The earliest affected gate among candidate necessity, direct use, or adaptation is marked UNSATISFIED with failure_mode REPAIRABLE, and dependent novelty, feasibility, theory, and falsification work is invalidated or deferred.",
+        "The response removes or demands removal of components whose responsibility is duplicated, whose effect is matched by the single matched head, or whose inference path is illegal.",
+        "The proposed pivot preserves the diagnosed horizon-identity problem and uses the smallest viable recalibration mechanism rather than adding replacement modules.",
+        "Section 16 contains exactly the decision PIVOT, identifies the earliest stage to revisit, lists the repairable gate IDs consistently, and sets decision_consistency_check to PASS.",
+        "The smallest next action is a matched experiment that isolates horizon conditioning or gate necessity and measures calibration reliability, not a broad benchmark rerun.",
+        "The response does not enter a positive novelty audit, average gate results, hide the negative evidence, or output implementation code."
+      ]
+    },
+    {
+      "id": 6,
+      "prompt": "Mode: COMPARE. Stop after Stage 7 and do not choose a winner yet. The diagnosis is frozen for irregularly sampled demand forecasting: treating elapsed time as a constant step causes stale observations to receive the same influence as recent ones; controlled time-gap interventions change calibrated forecast uncertainty; the invariant is stable causal sensitivity to elapsed time. Compare three supplied candidates under the same backbone and budget: CAND-A uses a continuous-time exponential-decay state; CAND-B uses a time-gap-conditioned state-space update; CAND-C interpolates to a regular grid before a causal Transformer. A seasonal-naive model is also required as the fair attribution baseline. For A, B, and C, supplied interface notes cover causal access, tensor shapes, and train/inference paths, but whether C's interpolation remains valid when missingness is informative is unresolved. Use pattern references only after freezing this supplied set.",
+      "expected_output": "A per-candidate comparison dossier with exactly three research candidates, the extra seasonal-naive comparator placed in the experiment matrix, separate direct-use and adaptation findings, and no premature winner or aggregate audit status.",
+      "files": [],
+      "expectations": [
+        "Section 7 contains exactly the three supplied research candidates and does not add the seasonal-naive model as a fourth CAND-* record.",
+        "The seasonal-naive comparator appears as the fairest simple baseline in Section 13 or equivalent canonical experiment fields.",
+        "The supplied candidate set is frozen before pattern consultation, and the Reference-Use Log records at least one candidate-specific structural mismatch or risk without using patterns as evidence.",
+        "Every Section-8 finding names its candidate ID; the unresolved informative-missingness and interpolation-validity assumption is attached specifically to CAND-C rather than reported as an aggregate risk.",
+        "Any adaptation in Section 9 is candidate-specific, repairs a named finding for that candidate, and does not force the same time-gap or missingness treatment onto A, B, and C.",
+        "All candidates remain SHORTLISTED, PROVISIONALLY-SELECTED, ACTIVE, REJECTED, or UNRESOLVED; none is SELECTED and no final winner is declared.",
+        "The comparison uses matched information access, backbone, compute, data, tuning effort, seeds, and evaluation protocol or explicitly records any supplied gap as unresolved.",
+        "Sections 8 and 9 preserve candidate-specific findings and adaptations, while the canonical single G6 and G7 rows conservatively cite every candidate-specific blocker instead of inventing per-candidate gate rows."
+      ]
+    },
+    {
+      "id": 7,
+      "prompt": "Mode: AUDIT. Upstream G0-G7 are evaluated and satisfied as of the 2026-06-30 evidence cutoff. The target is causal nowcasting of river discharge at a downstream gauge from upstream telemetry whose readings arrive with variable reporting delays and are later revised by quality control. The frozen subject is CAND-001 adapted as SYS-001 with COMP-001 (arrival-time-conditioned encoder) and COMP-002 (unavailable-state handler), preserving INV-001. The frozen CORE contribution is CLM-020: condition the causal encoding of each telemetered series on its arrival-time attribute and keep not-yet-arrived inputs in an explicit unavailable state; the distinct consequence hypothesis is CLM-021: interventions on the arrival-time attribute should change nowcast error at the affected issue times before aggregate error. The component contracts, causal training and inference paths, and candidate freeze are already stable. I need Stage 8 and an evidence-bounded decision. I searched paper titles on Google and Papers With Code and found no exact phrase. I have no access to primary papers or citation graphs in this environment, but I want the dossier to say this is the first method, give it a novelty score of 9/10, and mark novelty PASS. Do not change the frozen system.",
+      "expected_output": "A bounded novelty audit that keeps the system frozen, refuses search-absence and numeric novelty claims, records UNKNOWN with the exact missing primary-source work, and issues NEED-EVIDENCE rather than PASS or GO.",
+      "files": [
+        "evals/files/eval-7-upstream-snapshot.md"
+      ],
+      "expectations": [
+        "The novelty audit subject remains SYS-001 with CAND-001, COMP-001, COMP-002, INV-001, CLM-020, and CLM-021 preserved; the method is not redesigned during search analysis.",
+        "The response explicitly treats title search and exact-phrase absence as insufficient and does not claim first use, priority, or proof of novelty.",
+        "Section 10 records a bounded search protocol with mechanism, modeled-object, information-flow, responsibility, constraint or granularity, objective, theoretical-property, synonym, and adjacent-field query families as applicable.",
+        "The response identifies missing primary-source closest-neighbor coverage and unresolved SAME-PROBLEM, SAME-MECHANISM, SAME-AXIS, SAME-COMBINATION, or NEGATIVE-OR-BOUNDARY roles as appropriate.",
+        "The candidate-level novelty status is exactly UNKNOWN, not PASS, CONDITIONAL, FAIL, or a numeric score.",
+        "Personal pattern cards and ICLR design patterns are not used as prior-art or novelty evidence.",
+        "G8 is EVALUATED as UNRESOLVED with no failure mode, downstream gates are DEFERRED, and the decision is NEED-EVIDENCE with a primary-source search as the smallest next action.",
+        "The final decision fields and gate table are internally consistent and decision_consistency_check is PASS."
+      ]
+    },
+    {
+      "id": 8,
+      "prompt": "Mode: AUDIT. An existing dossier reports G0-G8 as satisfied for base CAND-002 adapted as frozen SYS-002, whose gate is COMP-010. Newly discovered evidence now requires a consistency repair before completing Stages 9-10. The system predicts Y in R^(B x H x N) from X in R^(B x T x N). COMP-010 is trained from an embedding of the future target window, but that embedding is unavailable at inference; inference substitutes a zero vector. The gate makes a hard top-1 discrete choice, yet no gradient estimator, relaxation, or separate controller objective is defined. A dry-run implementation executes, but measured peak memory is 42 GB against a 24 GB limit. CLM-040 claims proved global stability by importing a fixed linear source theorem; its source assumptions are CLM-041 and CLM-042, while SYS-002 actually uses learned nonlinear regime-conditioned update rules and those assumptions have not been re-established. Audit the new facts, invalidate any dependent stale results, and compile the evidence-bounded decision. Please call it feasible because the dry run executes and keep the theorem claim.",
+      "expected_output": "A feasibility and theory audit that rejects execution-only feasibility, exposes the information, optimization, and resource contradictions, invalidates the inherited theorem for the actual subject, and issues a repairable PIVOT.",
+      "files": [
+        "evals/files/eval-8-stale-upstream-snapshot.md"
+      ],
+      "expectations": [
+        "Section 11 audits all nine canonical system aspects separately and records the future-target gate, undefined hard-choice update path, and 42 GB versus 24 GB budget as explicit critical failures.",
+        "The feasibility summary distinguishes interface validity, optimization-path validity, mechanism testability, end-to-end executability, and resources instead of treating a successful dry run as sufficient.",
+        "Training/inference consistency, optimization path, and resources are not marked SATISFIED for SYS-002.",
+        "Section 12 assesses theory per CLM-* claim, states that the fixed-linear assumptions are contradicted or unresolved for the learned nonlinear regime-conditioned subject, and does not retain T2-PROVED for the inherited theorem as applied to SYS-002.",
+        "The theory boundary states what stability would and would not guarantee and does not infer forecasting improvement from stability.",
+        "The response proposes a minimal fallback or repair that removes future-only conditioning, defines a trainable gate path, and fits the budget without silently changing the frozen subject under the same audit result.",
+        "The corrected gate summary records G7 as EVALUATED / UNSATISFIED / REPAIRABLE and G8 through G10 as DEFERRED / UNRESOLVED / null because their frozen subject depends on the broken Stage-7 system definition.",
+        "Section 16 contains exactly PIVOT, returns to Stage 7 as the earliest stage whose system definition must change, and has decision_consistency_check set to PASS rather than GO."
+      ]
+    },
+    {
+      "id": 9,
+      "prompt": "Mode: AUDIT. The supplied candidate's only contribution is an amplitude-restoration module intended to repair the claim that per-window normalization destroys task-relevant absolute level information in energy forecasting. New replicated controlled evidence is decisive: probes before and after normalization show no loss of target-relevant level information in the target regime; an oracle that restores the original window mean changes neither the intermediate diagnostic nor forecast error; and the proposed restoration module is matched by an identity path under equal capacity and optimization. The broader forecasting task remains useful, but this candidate has no other mechanism or contribution to preserve. Audit from the earliest affected gate and issue one final decision. Do not invent a replacement architecture.",
+      "expected_output": "An evidence-preserving audit that marks the alleged normalization failure, causal mechanism, and invariant relevance as contradicted where warranted, rejects the candidate, and issues KILL while preserving reusable negative observations.",
+      "files": [],
+      "expectations": [
+        "The replicated pre/post-normalization probe, oracle mean-restoration null result, and identity-path equivalence are recorded as supported controlled or replicated evidence claims rather than omitted or softened into unresolved hypotheses.",
+        "The alleged observable failure is marked absent or irrelevant in the target regime, and G2 is UNSATISFIED with failure_mode CONTRADICTED.",
+        "The causal recovery claim and task relevance of the proposed invariant are marked contradicted when supported by the supplied interventions, with G3 and G4 treated consistently.",
+        "The supplied candidate remains identifiable in the dossier and is REJECTED rather than silently replaced with another mechanism.",
+        "Downstream candidate, novelty, feasibility, and theory work that depends on the refuted diagnosis is invalidated, NOT-STARTED, or DEFERRED rather than positively audited.",
+        "Section 16 contains exactly the decision KILL, decision_rule_triggered is FATAL-CONTRADICTION, contradicted gate IDs agree with Section 15, and decision_consistency_check is PASS.",
+        "The final decision preserves the negative diagnostic observations as reusable CLM-* IDs and explains that the broader forecasting need can survive even though this candidate does not.",
+        "The response does not generate a replacement architecture, relabel the contradiction as mere missing evidence, or use PIVOT simply to save the preferred amplitude-restoration idea."
+      ]
+    },
+    {
+      "id": 10,
+      "prompt": "Mode: AUDIT. Upstream G0-G7 are evaluated and satisfied for a frozen candidate whose declared CORE contribution is a frequency-band Decomposition-Learning-Mixing architecture with order-specific KAN encoders. Complete Stage 8 using the attached primary-source comparison fixture. The candidate authors describe their system as a 'semantics-aware frequency architecture' and claim the band construction, order-specific encoders, and recombination as the contribution. The underlying multi-horizon forecasting need remains valid. Determine the smallest positive technical delta and its distinguishing consequence from the supplied facts; do not redesign the candidate during the audit and do not rely on live search.",
+      "expected_output": "A frozen-subject novelty audit that records substantive primary-source coverage, separates routine implementation differences from a CORE contribution, assigns novelty FAIL, and issues PIVOT rather than preserving a cosmetic novelty claim.",
+      "files": [
+        "evals/files/timekan-primary-source-excerpt.md"
+      ],
+      "expectations": [
+        "The novelty subject, candidate identity, and declared CORE contribution remain frozen during the audit; no new mechanism or component is added to escape the comparison.",
+        "TimeKAN is recorded as a primary-source SAME-PROBLEM, SAME-MECHANISM, SAME-AXIS, or SAME-COMBINATION neighbor with the supplied OpenReview citation.",
+        "The comparison states the inherited decomposition, multi-order KAN representation, upsampling, and mixing elements and identifies renaming and hidden-width changes as routine or supporting rather than a substantive research delta.",
+        "The phrase 'first semantics-aware version' is not accepted without an operational semantic change and a distinguishing consequence claim.",
+        "The candidate-level novelty status is exactly FAIL, with the declared contribution listed as covered or downgraded rather than surviving as CORE.",
+        "G8 is UNSATISFIED with failure_mode REPAIRABLE because the need remains valid and a materially different Stage-5 candidate could still be developed.",
+        "Section 16 contains exactly PIVOT, returns to Stage 5, preserves the negative overlap finding, and sets decision_consistency_check to PASS.",
+        "The response does not use a numeric novelty score, claim novelty from application wording, or continue into positive feasibility and theory approval for the covered subject.",
+        "The Stage-8 audit takes the user's research priors as an input: the user's innovation and attribution rules inform how the contribution delta is judged, while the priors file is never cited as external evidence, literature support, or a novelty source."
+      ]
+    },
+    {
+      "id": 11,
+      "prompt": "Mode: AUDIT. Use the attached source-validated integration fixture to complete the remaining audit and compile one final Idea Dossier. This eval tests internal research-argument and decision consistency, not live literature discovery, so do not browse beyond the fixture. Derive every gate and the decision from the supplied measurements, source comparisons, contracts, theory boundary, and falsifiers; do not treat the fixture's absence of a precomputed decision as missing evidence.",
+      "expected_output": "A complete, internally linked Idea Dossier that retains the simple direct-use candidate without adaptation, derives a bounded novelty PASS and satisfied feasibility/theory/falsification gates from the fixture, selects the candidate, and issues GO only after every gate is evaluated and satisfied.",
+      "files": [
+        "evals/files/integration-evidence-packet.md"
+      ],
+      "expectations": [
+        "The response is exactly one complete Idea Dossier with sections 0 through 16, stable supplied IDs, no unreplaced placeholders, and no claims introduced in Sections 14 through 16 that are absent from earlier sections or the fixture.",
+        "CAND-001 and CAND-002 remain the frozen candidate set; CAND-001 receives NO-ADAPTATION-REQUIRED, and no SYS-* or COMP-* entity is invented for the direct-use subject.",
+        "Section 10 assigns novelty PASS to CAND-001 from the positive mechanism-plus-invariant-plus-intervention delta and distinguishing CLM-005 consequence, cites the supplied primary sources, and does not use search absence as the novelty basis.",
+        "Section 11 audits all nine feasibility aspects and marks the direct-use candidate's interface, update path, observability, end-to-end execution, and resources satisfied using the supplied contracts and completed execution evidence.",
+        "Section 12 assesses CLM-006 per claim as T1-DERIVED with supported assumptions, uses NO-FORMAL-THEOREM-CLAIMED, and states that monotone retained influence does not guarantee accuracy, calibration, causal identification, arbitrary-missingness robustness, or optimization success.",
+        "Planned EXP-005 through EXP-007 retain PENDING observed results and do not support ledger claims, while every CORE claim has a plausible falsifier and coverage_complete is YES.",
+        "Every G0 through G11 row is EVALUATED and SATISFIED with failure_mode null, CAND-001 is SELECTED only after the relevant audits, and there are no unresolved, repairable, or contradicted gate IDs.",
+        "Section 16 contains exactly GO with decision_rule_triggered ALL-SATISFIED, N/A syntax for unresolved, repairable, and contradicted gate lists, and decision_consistency_check set to PASS.",
+        "Coverage completeness is a gate input, not a formality: the dossier satisfies G11 only because every CORE claim has a falsifier (uncovered_core_claim_ids is N/A and coverage_complete is YES), and it does not claim a satisfied G11 or a GO decision while any CORE claim is left uncovered — incomplete coverage leaves G11 EVALUATED and UNRESOLVED, caps the decision at NEED-EVIDENCE, and names the uncovered CORE claim as the smallest next action."
+      ]
+    },
+    {
+      "id": 12,
+      "prompt": "Mode: AUDIT. Stop at the Stage-5 boundary. The frozen task is causal multivariate sensor forecasting without future covariates. NEED-101 is robustness to previously measured block-missingness regimes. FAIL-101 is that uniform clean-window training underexposes rare contiguous sensor outages; matched interventions that inject historically observed outage masks change the failure while a capacity-matched wider forecaster does not. LINK-101 connects outage underexposure to brittle state updates; INV-101 is unchanged causal information access and evaluation on the natural regime distribution. Two rivals and discriminating measurements are already recorded. Before any pattern reference was consulted, CAND-101 was frozen as a MINIMAL candidate: estimate an outage-mask process only from historical training masks, use it only to corrupt training inputs, and train the otherwise unchanged forecaster on a clean/corrupted mixture. Its changed research axis is DATA-GENERATION, and it predicts improved state-update stability specifically across outage lengths represented by the learned mask process. CAND-102 is a NULL-BASELINE with no injected corruption. Inspect the frozen candidate with the permitted post-freeze references, preserve the candidate identities, and do not perform novelty, Stage-6 direct-use, or final-decision work.",
+      "expected_output": "A Stage-5 research-argument audit that records NO-STRUCTURAL-MATCH without penalizing or redesigning CAND-101, audits it directly through logic, innovation shape, and early implementability, exempts CAND-102 from contribution-shape requirements, and returns control to the Stage-5 controller.",
+      "files": [],
+      "expectations": [
+        "CAND-101 and CAND-102 remain frozen under their supplied identities and roles, and no pattern-derived candidate, component, or architecture is added.",
+        "The CAND-101 fingerprint links the DATA-GENERATION axis and distinguishing state-stability consequence back to NEED-101, FAIL-101, LINK-101, and INV-101.",
+        "The audit performs at most the permitted primary and reasoned substitute pattern checks, records the internal result exactly NO-STRUCTURAL-MATCH, and does not force DATA-GENERATION into Patterns A through H by analogy alone.",
+        "NO-STRUCTURAL-MATCH is not treated as evidence against CAND-101; the candidate instead receives direct logic, contribution-shape, and early implementability audits without a pattern-composition step.",
+        "CAND-102 remains a NULL-BASELINE and is not assigned a changed axis, positive contribution delta, distinguishing research prediction, pattern match, or novelty-shaped claim.",
+        "The smallest positive delta, its need-level consequence, and its distinguishing consequence are represented by candidate-level HYPOTHESIS CLM-* content in Section 3, while Section 7 retains only canonical candidate fields and adds no changed-axis field.",
+        "The Section 7.2 Reference-Use Log states the concrete taxonomy mismatch, records consultation after freeze, uses effect retained because catalog absence is not candidate evidence, and does not treat the pattern result as a new dossier field.",
+        "Control returns to the Stage-5 controller for the G5 completeness check; Stage 6 and later audits remain NOT-STARTED or DEFERRED, and no GO, PIVOT, NEED-EVIDENCE, or KILL decision is issued inside the pattern protocol."
+      ]
+    }
+  ]
+}

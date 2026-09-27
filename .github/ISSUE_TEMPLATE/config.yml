@@ -1,0 +1,11 @@
+blank_issues_enabled: true
+contact_links:
+  - name: How the dossier format works
+    url: https://github.com/tylsssss/Time-series-research-skills/blob/main/docs/schema.md
+    about: Sections, lifecycle values, ID namespaces, evidence levels, and gate routing.
+  - name: How to replace the personal layer
+    url: https://github.com/tylsssss/Time-series-research-skills/blob/main/PERSONALIZE.md
+    about: Swap the six personal-*.md slots for your own research stance.
+  - name: Security issue
+    url: https://github.com/tylsssss/Time-series-research-skills/security/advisories/new
+    about: Report privately. Do not open a public issue for a security problem.

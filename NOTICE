@@ -1,0 +1,45 @@
+Time-series-research-skills
+Copyright 2026 The Time-series-research-skills Authors
+
+This product is licensed under the Apache License, Version 2.0 (see LICENSE).
+
+--------------------------------------------------------------------------------
+Third-party material
+--------------------------------------------------------------------------------
+
+This repository contains only original content authored for this project. It does
+not redistribute any third-party skill, prompt, or documentation text.
+
+Conventions that this repository follows but does not copy:
+
+* Agent Skills file layout and frontmatter conventions (`SKILL.md` with `name` and
+  `description`, plus `references/` and `assets/` subdirectories). The public
+  specification is maintained at https://agentskills.io/specification
+* The `.claude-plugin/marketplace.json` plugin-marketplace layout used by Claude
+  Code and compatible clients.
+* The `agents/openai.yaml` interface/policy adapter layout used by Codex and other
+  OpenAI surfaces.
+
+Nothing in this repository is affiliated with, endorsed by, or sponsored by
+Anthropic, OpenAI, or any other vendor. Vendor and product names are used only to
+describe compatibility.
+
+--------------------------------------------------------------------------------
+Eval fixtures
+--------------------------------------------------------------------------------
+
+Files under `skills/*/evals/files/` are synthetic research fixtures written for
+behavioral testing. They paraphrase publicly documented properties of named
+published methods for the sole purpose of exercising the novelty-audit workflow.
+They quote no source text and reproduce no figure, table, or extended passage.
+Each fixture is a test input, not a claim about the cited work; consult the cited
+primary source before relying on any statement in them.
+
+--------------------------------------------------------------------------------
+Personal profile layer
+--------------------------------------------------------------------------------
+
+Files named `references/personal-*.md` are a swappable configuration slot, not
+third-party material. The content shipped in `profiles/default/` is the
+maintainer's own research preferences and is published intentionally as the
+default profile. Users are expected to replace it; see PERSONALIZE.md.

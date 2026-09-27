@@ -1,0 +1,48 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Editors and IDEs
+.idea/
+.vscode/
+*.swp
+*~
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Node
+node_modules/
+npm-debug.log*
+pnpm-debug.log*
+
+# Build artifacts
+dist/
+build/
+
+# Local secrets and env
+.env
+.env.*
+!.env.example
+
+# Local state
+profiles/.active
+profiles/.backup/
+# Your own personal layer. Never commit this: a precedent card names the failure,
+# mechanism, and invariant of a project that may be under review.
+profiles/private/
+eval-results.tmp
+*.log
+
+# Applied personal profiles are user content. If you swap in your own profile,
+# do not commit the slot files: run `scripts/use-profile.sh default` first.
+# (CI warns when the slots differ from profiles/default, so an accidental commit
+# is visible in the pull-request diff.)

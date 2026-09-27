@@ -1,0 +1,29 @@
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+indent_style = space
+indent_size = 2
+trim_trailing_whitespace = true
+
+[*.md]
+# Markdown uses two trailing spaces for a hard line break, and the dossier
+# template relies on trailing pipes in tables being left alone.
+trim_trailing_whitespace = false
+max_line_length = off
+
+[*.py]
+indent_size = 4
+max_line_length = 100
+
+[*.{js,mjs,json,yml,yaml}]
+indent_size = 2
+
+[*.sh]
+indent_size = 2
+# shellcheck is not enforced by CI yet; keep the style simple and POSIX-friendly.
+
+[Makefile]
+indent_style = tab

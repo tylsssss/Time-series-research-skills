@@ -1,0 +1,16 @@
+interface:
+  display_name: time series model ideation
+  short_description: Develop, audit, compare, repair, and refine research ideas for
+    time-series models. Use for architecture, representation, information-flow, mechanism-transfer,
+    NAS, objective, and theoretical-claim ideation. Do not use for implementing or
+    debugging a frozen method, literature-only summaries, paper polishing, or final
+    figures.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true

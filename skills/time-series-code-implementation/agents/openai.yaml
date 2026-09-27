@@ -1,0 +1,18 @@
+interface:
+  display_name: time series code implementation
+  short_description: Implement complete, runnable time-series research code from a
+    verbal idea or a frozen method spec, researching GitHub time-series libraries
+    for reference implementations first. Use whenever a user describes a time-series
+    research idea and wants working code, or wants to reproduce or adapt a method
+    from a time-series library such as TSLib, darts, GluonTS, tsai, sktime, or
+    Nixtla. Do not use for idea-level analysis and auditing (use
+    time-series-model-ideation instead) or for general non-time-series coding.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true
