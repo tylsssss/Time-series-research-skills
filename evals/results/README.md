@@ -39,7 +39,7 @@ These mirror `CONTRIBUTING.md`:
   bug, fix the grader and record both the failure and the fix — do not rerun until it
   looks better.
 * Tier-1 results do not belong here. Structural grading is deterministic and runs in CI;
-  its evidence is the self-test output in the `lint` workflow, not a results file.
+  its evidence is the self-test output in the `ci` workflow, not a results file.
 
 ## Privacy
 

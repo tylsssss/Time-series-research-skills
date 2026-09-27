@@ -41,7 +41,7 @@ const REQUIRED_FILES = [
   'scripts/build-bundle.mjs', 'scripts/lint.mjs',
   'profiles/README.md', 'profiles/default/personal-research-priors.md',
   'profiles/default/personal-code-style.md',
-  '.github/workflows/lint.yml', '.github/PULL_REQUEST_TEMPLATE.md',
+  '.github/workflows/ci.yml', '.github/PULL_REQUEST_TEMPLATE.md',
 ];
 const missing = REQUIRED_FILES.filter((f) => !exists(path.join(ROOT, f)));
 check('L01 required-files', missing.length === 0,

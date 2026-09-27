@@ -75,7 +75,7 @@ Two version numbers exist and they move independently:
 * `scripts/build-bundle.mjs` — flattens a skill plus the references it needs into a
   single Markdown bundle for agents without a skills mechanism.
 * `scripts/lint.mjs` — frontmatter, reference-path, profile-sync, fixture-path, and
-  asset checks, wired into `.github/workflows/lint.yml`.
+  asset checks, wired into `.github/workflows/ci.yml`.
 
 ### Changed
 

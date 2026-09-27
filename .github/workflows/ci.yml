@@ -1,4 +1,4 @@
-name: lint
+name: ci
 
 # The steps here are not restated inline: the job calls `make ci`, and `make ci` is
 # runnable locally before pushing. A workflow that duplicates its checks drifts

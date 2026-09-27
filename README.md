@@ -1,5 +1,7 @@
 # Time-series-research-skills
 
+[![ci](https://github.com/tylsssss/Time-series-research-skills/actions/workflows/ci.yml/badge.svg)](https://github.com/tylsssss/Time-series-research-skills/actions/workflows/ci.yml)
+
 Two [Agent Skills](https://agentskills.io/specification) that make an agent argue about
 a time-series research idea **before** it writes a model, and write the code only after
 the argument survives.

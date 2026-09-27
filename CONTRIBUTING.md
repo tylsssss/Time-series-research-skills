@@ -52,7 +52,7 @@ make bundle        # build dist/*.bundle.md
 make install-user  # install both skills for the current user (Claude Code + ~/.agents/skills)
 ```
 
-**Run `make ci` before pushing.** It is the same set of steps the `lint` workflow runs —
+**Run `make ci` before pushing.** It is the same set of steps the `ci` workflow runs —
 the workflow calls these targets rather than restating them, because a workflow that
 duplicates its checks drifts from them. This repository shipped a CI step naming a probe
 profile that had been deleted, and only CI noticed, after the push. Running it locally

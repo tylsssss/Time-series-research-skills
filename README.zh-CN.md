@@ -1,5 +1,7 @@
 # Time-series-research-skills
 
+[![ci](https://github.com/tylsssss/Time-series-research-skills/actions/workflows/ci.yml/badge.svg)](https://github.com/tylsssss/Time-series-research-skills/actions/workflows/ci.yml)
+
 两个 [Agent Skills](https://agentskills.io/specification)：让 agent 在动手写模型**之前**先为你的时间序列研究构想辩护，只有论证活下来才允许写代码。
 
 | Skill | 职责 |

@@ -158,7 +158,7 @@ If you are publishing a fork, treat this section as a hard gate rather than hist
       `SECURITY.md` and `CODE_OF_CONDUCT.md`).
 - [ ] Enable **Discussions** if you want a place for methodology arguments that are not
       bug reports.
-- [ ] Protect `main`: require the `lint` workflow to pass, and require a pull request for
+- [ ] Protect `main`: require the `ci` workflow to pass, and require a pull request for
       non-maintainer changes.
 - [ ] Add the CI badge to both READMEs **after** the first successful run, so the badge
       is never broken.
